@@ -1,4 +1,4 @@
-# oversvale
+# overscale
 
 [Preview](https://loquacious-fairy-b45e08.netlify.app)
 
