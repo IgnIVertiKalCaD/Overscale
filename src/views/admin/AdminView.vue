@@ -1,5 +1,5 @@
 <template>
-    <v-card class="fill-height">
+    <sectoin class="fill-height">
       <v-layout class="fill-height">
         <v-navigation-drawer
           v-model="drawer"
@@ -31,7 +31,7 @@
         </v-navigation-drawer>
         <v-main style="height: 250px">{{users}}</v-main>
       </v-layout>
-    </v-card>
+    </sectoin>
   </template>
 
   <script>

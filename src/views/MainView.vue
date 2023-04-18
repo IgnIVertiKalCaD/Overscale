@@ -2,11 +2,18 @@
         <div class="header">
 
             <div class="inner-header flex ">
+                <transition name="transform-right" appear>
+                    <div class="frame-for-decorate">
                 <v-img
-                    class="logo"
-                    :src="logo">
-                </v-img>
-                <h1>Overscale</h1>
+                        class="logo"
+                        :src="logo">
+                    </v-img>
+                    </div>
+                </transition>
+                <transition name="transform-left" appear>
+                    <h1>Overscale</h1>
+                </transition>
+                <router-link :to="{name: 'admin'}">Go to Home</router-link>
             </div>
 
             <div>
@@ -22,7 +29,6 @@
                     </g>
                 </svg>
             </div>
-
         </div>
 </template>
 
@@ -50,11 +56,34 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
+.frame-for-decorate {
+    background: white;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.transform-right-enter-active {
+    transition: all .8s;
+}
+
+.transform-right-enter-from {
+    transform: translateX(-40px);
+    opacity: 0;
+}
+
+.transform-left-enter-active {
+    transition: all .8s ease-out;
+}
+
+
+.transform-left-enter-from {
+    transform: translateX(20px);
+    opacity: 0;
+}
+
+
 @import url(//fonts.googleapis.com/css?family=Lato:300:400);
 
-body {
-    margin:0;
-}
 
 h1 {
     font-family: 'Lato', sans-serif;
