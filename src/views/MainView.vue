@@ -13,7 +13,8 @@
                 <transition name="transform-left" appear>
                     <h1>Overscale</h1>
                 </transition>
-                <router-link :to="{name: 'admin'}">Go to Home</router-link>
+<!--                <router-link :to="{name: 'admin'}">Go to Home</router-link>-->
+                    <ardialog/>
             </div>
 
             <div>
@@ -35,6 +36,7 @@
 <script>
 
 import logo from "@/assets/logo.svg"
+import ardialog from "@/views/ar/UI/ARDialog.vue"
 
 import { defineComponent } from "vue";
 export default defineComponent({
@@ -46,7 +48,7 @@ export default defineComponent({
     },
     created() {
     },
-    components: {
+    components: { ardialog
     },
     computed: {
     },

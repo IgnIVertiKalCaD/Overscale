@@ -12,8 +12,12 @@ const routes = [
     name: 'admin',
     // children
     component: () => import ('../views/admin/AdminView.vue')
-
   },
+  {
+    path: '/registration',
+    name: 'registration',
+    component: () => import('../views/ar/registration.vue')
+  }
 ]
 
 const router = createRouter({
