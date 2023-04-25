@@ -20,8 +20,17 @@ export default {
 
 <style lang="scss">
 
+html, body, #app, .v-application, .inner-header{
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow: hidden;
+  background: black !important;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
 .fade-enter-active {
-  transition: all .8s ease-out;
+  transition: all 1s ease;
 }
 
 .fade-leave-active {
@@ -30,6 +39,8 @@ export default {
 
 .fade-enter-from,
 .fade-leave-to {
+  transform: scale(1.2);
+  transition: all .8s ease;
   opacity: 0;
 }
 
