@@ -1,5 +1,5 @@
 <template>
-    <div class="header">
+    <div class="header" >
         <dock/>
         <div class="inner-header flex">
             <transition name="transform-right" appear>
@@ -14,7 +14,6 @@
                               v-for="(item, index) of title_project" :key="index">{{ item.text }}</span>
                 </section>
             </transition>
-                            <router-link :to="{name: 'admin'}">Go to Home</router-link>
             <!--<ardialog/>-->
 
         </div>
@@ -66,8 +65,7 @@ export default defineComponent({
         ardialog, card_outline
     },
     computed: {},
-    mounted() {
-    },
+
 });
 </script>
 

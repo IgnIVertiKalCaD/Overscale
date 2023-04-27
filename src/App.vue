@@ -1,36 +1,50 @@
 <template>
-      <v-app>
-          <router-view v-slot="{ Component }">
-              <transition name="fade" mode="out-in">
-                  <component :is="Component" />
-              </transition>
-          </router-view>
-      </v-app>
+    <v-app>
+        <transition name="scale">
+            <preloader v-if="!loaded"></preloader>
+        </transition>
+        <router-view v-slot="{ Component }">
+            <transition name="fade" mode="out-in">
+                <component :is="Component"/>
+            </transition>
+        </router-view>
+    </v-app>
 </template>
 
 <script>
-
+import preloader from '@/components/UI/preloader.vue';
 export default {
-  name: 'App',
-  data: () => ({
-    //
-  }),
+    name: 'App',
+    data: () => ({
+        loaded: false
+    }),
+    components: {
+        preloader
+    },
+    mounted() {
+        window.addEventListener('load', () => {
+            this.loaded = true;
+        });
+    },
 }
 </script>
 
 <style lang="scss">
 
-html, body, #app, .v-application, .inner-header{
+
+html, body, #app, .v-application, .inner-header {
   scrollbar-width: none;
   -ms-overflow-style: none;
   overflow: hidden;
   background: black !important;
 }
+
 body::-webkit-scrollbar {
   display: none;
 }
+
 .fade-enter-active {
-  transition: all 1s ease;
+  transition: 1s ease;
 }
 
 .fade-leave-active {
@@ -39,9 +53,24 @@ body::-webkit-scrollbar {
 
 .fade-enter-from,
 .fade-leave-to {
-  transform: scale(1.2);
-  transition: all .8s ease;
+  transform: scale(1.1);
+  transition: .4s ease;
   opacity: 0;
 }
 
+
+.scale-enter-active {
+    transition: all 1s ease;
+}
+
+.scale-leave-active {
+    transition: all .8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.scale-enter-from,
+.scale-leave-to {
+    transform: scale(0.5);
+    transition: all .8s ease;
+    opacity: 0;
+}
 </style>

@@ -34,11 +34,11 @@ export default {
         social: [
             {
                 name: 'github',
-                link: 'textlink'
+                link: 'https://github.com/IgnIVertiKalCaD/Overscale'
             },
             {
                 name: 'discord',
-                link: 'textlink'
+                link: 'https://discord.gg/naTFAzB45f'
             },
         ]
     })

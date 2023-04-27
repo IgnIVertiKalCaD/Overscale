@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify'
 import { loadFonts } from './plugins/webfontloader'
+import { VuePreloader } from 'vue-preloader';
 
 // import 'swiper/css';
 
@@ -16,4 +17,5 @@ app
   .use(router)
   .use(store)
   .use(vuetify)
+  .use(VuePreloader)
   .mount('#app')
