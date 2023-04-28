@@ -22,7 +22,7 @@
     width: 50px;
     height: 50px;
     border: 5px solid #ffffff;
-    border-top: 5px solid #2e34ff;
+    border-top: 5px solid #7e0fc4;
     border-radius: 50%;
     animation: spin 2s linear infinite;
 }

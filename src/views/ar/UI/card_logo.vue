@@ -1,74 +1,61 @@
 <template>
-    <v-card
-            class="ma-0 pa-10 mr-5 border-0"
-            variant="outlined"
-    >
-        <v-card-item>
-            <div>
-                <div class="text-overline mb-1 frame-for-decorate-bg-logo">
-                    <v-img :src="image"></v-img>
-                </div>
-                <div class="mb-1 design-text">
-                    {{ title }}
-                </div>
-                <div class="text-h5">CMS made with soul</div>
-            </div>
-        </v-card-item>
+  <v-card class="border-0" variant="outlined">
+    <v-card-item class="corrector">
+      <logo :title="title" />
+    </v-card-item>
 
-        <v-card-actions class="justify-center">
-            <v-btn v-for="(soc, index) in social" :key="index" :href="soc.link" variant="outlined">
-                {{ soc.name }}
-            </v-btn>
-        </v-card-actions>
-    </v-card>
+    <v-card-actions class="justify-center">
+      <v-btn
+        class="hover-effect"
+        v-for="(soc, index) in social"
+        :key="index"
+        size="large"
+        :href="soc.link"
+        variant="outlined"
+      >
+        <v-icon slot="prepend-icon" class="v-icon-size-1">mdi-{{ soc.name }}</v-icon>
+        {{ soc.name }}
+      </v-btn>
+    </v-card-actions>
+  </v-card>
 </template>
 
 <script>
+import Logo from "@/components/UI/logo.vue";
 export default {
-    name: "card_outlined",
-    props: {
-        title: String,
-        image: String,
-    },
-    data: () => ({
-        social: [
-            {
-                name: 'github',
-                link: 'https://github.com/IgnIVertiKalCaD/Overscale'
-            },
-            {
-                name: 'discord',
-                link: 'https://discord.gg/naTFAzB45f'
-            },
-        ]
-    })
-}
+  name: "card_outlined",
+  components: { Logo },
+  props: {
+    //put value to next template on 4 string. Maked it потому что захотел
+    title: String,
+  },
+  data: () => ({
+    social: [
+      {
+        name: "github",
+        link: "https://github.com/IgnIVertiKalCaD/Overscale",
+      },
+      {
+        name: "discord",
+        link: "https://discord.gg/naTFAzB45f",
+      },
+    ],
+  }),
+};
 </script>
 
-<style scoped>
-.frame-for-decorate-bg-logo {
-    background: white;
-    padding: 5px;
-    border-radius: 50%;
-    margin: 2rem;
-    box-shadow: 0px 0px 20px 4px #848484;
-    animation: fade-logo 6s infinite;
-}
-@keyframes fade-logo {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.03);
-    }
-    100% {
-        transform: scale(1);
+<style scoped lang="scss">
+.hover-effect {
+    transition: .3s;
+    &:hover{
+      background: rgba(255, 255, 255, 0.281);
     }
 }
-.design-text {
-    font-family: 'Bruno Ace SC', sans-serif;
-    font-size: 3rem;
-    font-weight: bold;
-    text-transform: uppercase;
+.v-icon-size-1 {
+  font-size: 26px;
+  margin: 0 5px;
+}
+.corrector {
+  padding: 50px;
 }
 </style>

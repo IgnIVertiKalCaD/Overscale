@@ -37,6 +37,9 @@ html, body, #app, .v-application, .inner-header {
   -ms-overflow-style: none;
   overflow: hidden;
   background: black !important;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 body::-webkit-scrollbar {
@@ -69,7 +72,7 @@ body::-webkit-scrollbar {
 
 .scale-enter-from,
 .scale-leave-to {
-    transform: scale(0.5);
+    transform: scale(0.8);
     transition: all .8s ease;
     opacity: 0;
 }

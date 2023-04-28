@@ -1,0 +1,77 @@
+.heading-line-gradient {
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+$first-gradient: linear-gradient(43deg, #1a2559 0%, #641f5f 46%, #4a391b 100%);
+$second-gradient: linear-gradient(19deg, #0b6e84 0%, #63078e 100%);
+$third-gradient: linear-gradient(135deg, #065286 0%, #0a1194 100%);
+.heading-line-0 > .heading-line-gradient {
+  background-image: $first-gradient;
+}
+
+.heading-line-1 > .heading-line-gradient {
+  background-image: $second-gradient;
+}
+
+.heading-line-2 > .heading-line-gradient {
+  background-image: $third-gradient;
+}
+
+@keyframes first_heading_gradient {
+  0%,
+  16.667% {
+    opacity: 1;
+  }
+  35% {
+    // text-shadow: 0 0 10px white;
+    color: transparent;
+  }
+  40.333%,
+  83.333% {
+    opacity: 1;
+    color: white;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes second_heading_gradient {
+  0%,
+  35% {
+    color: white;
+  }
+  45%,
+  50% {
+    color: transparent;
+  }
+  65%,
+  100% {
+    color: white;
+  }
+}
+
+@keyframes third_heading_gradient {
+  0%,
+  50% {
+    color: white;
+  }
+  80% {
+    color: transparent;
+  }
+  100% {
+    color: white;
+  }
+}
+.heading-line-0 > .heading-line-gradient {
+  animation: first_heading_gradient 8s infinite;
+}
+.heading-line-1 > .heading-line-gradient {
+  animation: second_heading_gradient 8s infinite;
+}
+
+.heading-line-2 > .heading-line-gradient {
+  animation: third_heading_gradient 8s infinite;
+}

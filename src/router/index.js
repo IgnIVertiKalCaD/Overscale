@@ -14,9 +14,9 @@ const routes = [
     component: () => import ('../views/admin/AdminView.vue')
   },
   {
-    path: '/registration',
-    name: 'registration',
-    component: () => import('../views/ar/registration.vue')
+    path: '/auth',
+    name: 'auth',
+    component: () => import('../views/ar/auth.vue')
   }
 ]
 
