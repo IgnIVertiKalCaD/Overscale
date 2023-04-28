@@ -18,7 +18,11 @@
         </section>
       </transition>
     </div>
+
   </div>
+  <div class="container-particles">
+          <div class="particle-1"></div>
+      </div>
 </template>
 
 <script>
@@ -30,6 +34,7 @@ import { defineComponent } from "vue";
 export default defineComponent({
   name: "MainPage",
   data: () => ({
+    windowWidth: window.innerWidth,
     project_name: "Phantom",
     title_project: [
       {
@@ -114,4 +119,7 @@ p {
 }
 
 @import './styles/animation_heading_line.scss';
+@import './styles/background_particles.scss';
+
+
 </style>
