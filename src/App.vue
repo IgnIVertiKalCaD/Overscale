@@ -1,4 +1,5 @@
 <template>
+<<<<<<< Updated upstream
     <v-app>
         <transition name="scale">
             <preloader v-if="!loaded"></preloader>
@@ -9,14 +10,60 @@
             </transition>
         </router-view>
     </v-app>
+=======
+  <v-app>
+
+    <router-view v-slot="{ Component, route }">
+        <transition :name="route.meta.animation" mode="out-in">
+          <component :is="Component"/>
+        </transition>
+    </router-view>
+
+    <preloader/>
+
+  </v-app>
+>>>>>>> Stashed changes
 </template>
 
 <script>
 import preloader from '@/components/UI/preloader.vue';
 export default {
+<<<<<<< Updated upstream
     name: 'App',
     data: () => ({
         loaded: false
+=======
+  name: "App",
+  data: () => ({
+    loaded: false,
+  }),
+  components: {
+    Preloader,
+    Wave,
+  },
+  mounted() {
+    // window.addEventListener("load", async () => {});
+  },
+  methods: {
+    GuardRouters() {
+      this.$router.beforeEach(async (to, from, next) => {
+          if (to.matched.some((record) => record.meta.requiresAuth)) {
+            if (this.statusAuth) {
+            next();
+          } else {
+              //dev uncom
+            // next({name: "preview"});
+          }
+        } else {
+          next();
+        }
+      });
+    },
+  },
+  computed: {
+    ...mapGetters({
+      statusAuth: 'auth/getStatusAuth',
+>>>>>>> Stashed changes
     }),
     components: {
         preloader
@@ -30,6 +77,18 @@ export default {
 </script>
 
 <style lang="scss">
+<<<<<<< Updated upstream
+=======
+@import "./views/styles/vue_animation";
+@import "./views/styles/nonScoped";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+//This is no my design. P.S. IgnI
+
+//https://fonts.google.com/specimen/Cantarell#styles
+//https://www.cdnfonts.com/baumans.font
+>>>>>>> Stashed changes
 
 
 html, body, #app, .v-application, .inner-header {
