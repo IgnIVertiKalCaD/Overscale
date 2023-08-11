@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <template>
     <sectoin class="fill-height">
         <v-layout class="fill-height">
@@ -88,3 +89,6 @@ export default defineComponent({
   // background-color: black;
 }
 </style>
+=======
+<template></template>
+>>>>>>> Stashed changes

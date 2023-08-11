@@ -41,7 +41,6 @@ export default {
 
 <style scoped lang="scss">
 .design-text {
-  font-family: "Bruno Ace SC", sans-serif;
   font-size: 2.5rem;
   font-weight: bold;
   text-transform: uppercase;
